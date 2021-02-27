@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>pako调用案例</title>
+    <script src="js/pako.js"></script>
+    <!--自定义常用方法-->
+    <script src="js/pako.init.js"></script>
+</head>
+<body>
+    <label for="normal_text">正常文本：</label><p id="normal_text">pako 是一款对内容压缩与解压的js，思想是zlib。</p><br/>
+    <label for="zip_text">压缩文本：</label><p id="zip_text"></p><br/>
+    <label for="unzip_text">解压文本：</label><p id="unzip_text"></p>
+</body>
+</html>
+<script type="text/javascript">
+    //正常文本
+    var normal_text = document.getElementById("normal_text").innerText;
+
+    //压缩
+    var zip_text = zip(normal_text);
+    document.getElementById("zip_text").innerText= zip_text;
+
+    //解压缩
+    var unzip_text = unzip(zip_text);
+    document.getElementById("unzip_text").innerText = unzip_text;
+</script>
